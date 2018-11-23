@@ -51,19 +51,72 @@ optimization of a combined view for criteria provided for each paradigm or crite
 
 \subsection{Formalism}
 \label{sec:Formalism}
-\todo[inline]{Responsible MA, Didier and SK}
-Based on the definition of a formalism given in Broman et.al.~\cite{BromanViewpointsformalismslanguages2012}, we formally define a formalism as:
-\begin{definition}[Formalism]
-    $$F = (AS, \llbracket ~ \rrbracket) $$  where (AS = Abstract syntax, $\llbracket ~ \rrbracket$ = Semantics)
-\end{definition}
 
+
+\subsubsection{Definition}
+\label{sec:Formalism-Definition}
+
+A \emph{formalism} is intuitively a \emph{mathematical object} 
+\cite{BromanViewpointsformalismslanguages2012} that describes a set of concepts,
+as well as their relationships, and rules for manipulating them consistently. As
+such, a formalism is similar to a \emph{language}, but lacks a proper 
+\emph{concrete syntax}: often, plain mathematics is used to describe the 
+concepts and their manipulation. 
+
+\begin{definition}[Formalism]
+   A \emph{formalism} $F \in \mathcal{F}$ is a triple $F = (\mathsf{AS}, \mathbb{D}, \mu)$ 
+	where: 
+	\begin{itemize}
+		\item $\mathsf{AS}$ is an \emph{abstract syntax} defining the core concepts, as 
+		well as their relationships, called \emph{abstract components} of the 
+		formalism;
+		
+		\item $\mathbb{D}$ is the \emph{semantic domain}, viewed as a mathematical set that 
+		gives meaning to the concepts in \textsf{AS} via
+		
+		\item $\mu \colon \mathsf{AS} \to \mathbb{D}$, the \emph{semantic mapping}.
+	\end{itemize}
+\end{definition}
+The abstract syntax is itself captured by a \emph{structural language}: the 
+\textsc{Omg} Class Diagram, the Entity/Relation language, etc. The semantic mapping
+unambiguously maps each abstract concept (or a combination of several related 
+abstract concepts) to elements of $\mathbb{D}$ through the traditional semantic 
+techniques: \emph{operational}, \emph{translational} or \emph{axiomatic} 
+\cite{}. 
+
+
+
+A \emph{language} is the computer counterpart of formalisms, in the sense that 
+they represent concrete implementations. As a direct consequence, a language differs
+from a formalism in the sense that it provides a computer-friendly 
+\emph{concrete syntax} (which requires, for example, to remove any greek symbols 
+in order to stick to a specific file encoding). 
+
+A language 
+
+
+sticking to a specific encoding of character instead of greek symbols), and to make
+implementation choices on how to efficiently represent the semantic domain 
+$\mathbb{D}$. These choices may introduce slight deviations in the semantics 
+(both in the domain and the mapping), and/or may implement several variations in 
+the semantics (for example, using different solvers for a semantic domain for time, 
+that may change the overall semantics) \cite{BromanViewpointsformalismslanguages2012}.
+
+
+
+
+\subsubsection{Characteristics}
+\label{sec:Formalism-Characteristics}
 
 \begin{definition}[Formalism-Properties]
     Each formalism exposes certain properties, that define how and where it can be used (e.g. it is timed/untimed, continuous/discrete/hybrid, etc.).
     These properties help moving from one formalism to another, find similar formalisms and help characterising the transformations.
 \end{definition}
 
-\paragraph{Example formalisms}
+
+\subsubsection{Examples}
+\label{sec:Formalism-Examples}
+
 \begin{itemize}
     \item Ordinary differential equations
     \item Timed Automata
